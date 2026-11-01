@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10110f"><title>Parlor — the room is yours</title><link rel="stylesheet" href="/style.css"></head>
+<body class="host"><div class="shell">
+  <aside class="rail"><a class="brand" href="/" aria-label="Parlor home"><span class="brand-mark">P<span>✳</span></span><span>PARLOR<small>LOCAL ARCADE</small></span></a>
+    <div class="rail-label">TONIGHT’S LINEUP</div><nav id="game-nav" class="game-nav" aria-label="Choose a game"></nav>
+    <div class="rail-bottom"><span class="live-dot"></span><span id="connection-label">Connecting to the room…</span></div>
+  </aside>
+  <main class="stage">
+    <header class="topbar"><div><span class="eyebrow">YOUR LIVING ROOM, LEVELLED UP</span><h1 id="headline">The room is yours.</h1></div><div class="top-tools"><div class="room-code"><span>ROOM CODE</span><strong id="room-code">----</strong></div><button class="icon-button" id="copy-link" aria-label="Copy join address" title="Copy join address">⧉</button></div></header>
+    <section class="join-strip"><span class="join-spark">↗</span><div><b>Bring the whole room in.</b><span id="join-address">Finding your local address…</span></div><span class="join-hint">Same Wi-Fi · open on any phone</span></section>
+    <section class="lobby-row"><div class="section-title"><div><span class="eyebrow">THE GUEST LIST</span><h2>Players <span class="count-pill" id="player-count">0</span></h2></div><span class="capacity">UP TO 8</span></div><div id="players" class="player-list"><div class="empty-state"><span class="empty-icon">＋</span><strong>Save a spot for your friends.</strong><span>When they scan in, they’ll show up here.</span></div></div></section>
+    <section class="game-wrap"><div class="section-title game-heading"><div><span class="eyebrow">PICK YOUR POISON</span><h2>Choose a game</h2></div><span class="round-note" id="round-note">5 ways to start a rivalry</span></div>
+      <div id="game-detail" class="game-detail"><div class="detail-top"><div><span class="game-tag" id="detail-tag">REACTION TIME</span><h3 id="detail-name">Quickdraw</h3><p id="detail-description">Wait for the flash. Beat the room.</p></div><div class="detail-emblem" id="detail-emblem">↯</div></div><p class="game-rules" id="detail-rules">Read the instructions here.</p><button class="primary-button" id="start-game">Start Quickdraw <span>↗</span></button></div>
+      <div id="game-cards" class="game-cards"></div></section>
+    <footer class="host-footer"><span>BUILT FOR THE FRIENDS IN THE ROOM.</span><span>NO CLOUD. NO ACCOUNTS. JUST PLAY.</span></footer>
+  </main>
+  <section id="play-area" class="play-area" aria-live="polite"></section>
+</div><script>window.PARLOR_HOST_KEY="__HOST_TOKEN__";</script><script src="/host.js" defer></script></body></html>
+

@@ -1,0 +1,2 @@
+"""Parlor LAN party arcade."""
+
