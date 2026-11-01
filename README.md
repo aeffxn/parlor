@@ -41,7 +41,7 @@ Each game has a rules and ready screen, an active round, server-owned scoring, a
 ## 🛠 Requirements
 
 - Python 3.10 or newer on the host computer.
-- A modern browser with JavaScript enabled on host and player devices.
+- A browser with JavaScript enabled on host and player devices. The controller includes fallbacks for older Safari versions, including iOS 9; the iPad mini 1 has not been physically device-tested.
 - All devices connected to the same trusted Wi-Fi network.
 - No Python, app install, account, API key, or package install on joining devices.
 
@@ -81,6 +81,7 @@ Parlor/
 ├── web/host.js               # Host lobby, game display, and game-night actions
 ├── web/controller.html       # Mobile-first join and controller layout
 ├── web/controller.js         # Player session, polling, and touch controls
+├── web/compat.js             # Fetch and browser API fallbacks for older Safari
 ├── web/style.css             # Shared visual system and responsive layouts
 ├── tests/test_parlor.py      # Room, lifecycle, and game rule tests
 ├── Start-Parlor.bat          # Windows launcher
@@ -98,7 +99,7 @@ Browsers poll the local server several times per second for room and game state.
 
 Parlor uses charcoal cabinet-like panels, warm paper-white text, and a punchy yellow signal color. Each game gets a small accent color and its own visual cue, while the typography and spacing keep the host board readable from across a room. The controller is built around big thumb-sized buttons, a quick join form, and layouts that fit narrow phone screens. Reduced-motion preferences and keyboard focus outlines are respected.
 
-The UI uses a system-font fallback and does not require remote art. It optionally requests Space Grotesk and DM Mono from Google Fonts when internet access is available; if those fonts cannot load, the system font stack keeps the interface usable offline.
+The UI uses system fonts and does not require remote fonts or art. Older Safari uses XMLHttpRequest for API calls and flexbox layout where CSS Grid is unavailable.
 
 ## 🔒 Network and security
 
@@ -143,4 +144,3 @@ Add a game’s display name, description, and player-facing rules to `GAMES` in 
 ## 📄 License and contributing
 
 Parlor is released under the [MIT License](LICENSE). Issues and small pull requests are welcome. Keep the server understandable, avoid adding mandatory cloud services, and include tests when changing game rules.
-
