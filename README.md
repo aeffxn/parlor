@@ -35,6 +35,11 @@ Parlor turns the laptop in the middle of the room into a tiny arcade. Friends jo
 | 🔤 **Word Rush** | Unscramble a word from its hint. The first correct guess scores once per player. |
 | 🎨 **Color Clash** | Take turns claiming a 6×6 board. The room gets 24 claims; tile ownership decides the territory score. |
 | ☄️ **Meteor Run** | Dodge falling hazards with left and right phone buttons. The last runner standing, or the longest survivor, takes it. |
+| ✊ **Rock Paper Scissors** | Pick in secret, reveal together, and score for each opponent you beat. |
+| # **Closest Wins** | Guess a hidden number from 1 to 100; closest guesses share the points. |
+| ☝ **Hot Take** | Take a side on a room-ready opinion; the minority gets the points. |
+| ≡ **List Blitz** | Name up to three things that fit a category. Original answers score. |
+| ↗ **Memory Mix** | Watch the host screen’s arrow pattern and repeat it on your phone. |
 
 Each game has a rules and ready screen, an active round, server-owned scoring, and a results screen. Quiz Show and Word Rush run three rounds; the others run one. Use **Next round**, **Restart**, or **Lobby** to keep the night moving.
 
@@ -71,6 +76,8 @@ The first run does not create files or ask for setup. The host page opens at `ht
 
 Parlor supports up to eight active players. A disconnected player can refresh and rejoin with the saved browser session; stale sessions are removed after 90 seconds.
 
+The host can choose a shared room theme from the host screen or any joined controller. Open **Host controls** on a phone to select and start games, advance or restart rounds, or return to the lobby. These controls affect the shared game session; they do not control the host computer itself.
+
 ## 📂 Project structure
 
 ```text
@@ -78,9 +85,9 @@ Parlor/
 ├── server.py                 # Local HTTP server, room API, and host authentication
 ├── parlor/games/catalog.py   # Five server-authoritative game rules and content
 ├── web/host.html             # Shared-screen host layout
-├── web/host.js               # Host lobby, game display, and game-night actions
+├── web/host.js               # Host lobby, shared theme, and game-night actions
 ├── web/controller.html       # Mobile-first join and controller layout
-├── web/controller.js         # Player session, polling, and touch controls
+├── web/controller.js         # Player session, game controls, and remote host panel
 ├── web/compat.js             # Fetch and browser API fallbacks for older Safari
 ├── web/style.css             # Shared visual system and responsive layouts
 ├── tests/test_parlor.py      # Room, lifecycle, and game rule tests

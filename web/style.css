@@ -24,3 +24,45 @@
 .no-grid .answer-preview>div{min-width:180px}
 .no-grid .phone-grid .control-button{width:15%;flex-basis:15%}
 @media(max-width:620px){.no-grid .rail{display:none}.no-grid .stage{width:100%;padding:22px 17px 15px}.no-grid .game-card{width:calc(50% - 8px)}.no-grid .game-board,.no-grid .side-score{width:100%}.no-grid .answer-preview>div{width:100%}.no-grid .score-detail{display:none}.no-grid .play-area.open{padding:15px 14px}.no-grid .board-grid{max-width:100%}.no-grid .tile{width:calc(16.666% - 5px);height:auto;line-height:44px;flex-basis:calc(16.666% - 5px)}.no-grid .controller-shell{padding:20px 20px 22px}}
+
+/* Shared room themes */
+:root[data-theme="sunset"]{--ink:#21171c;--panel:#2e2027;--panel2:#3c2931;--line:#61434e;--soft:#cdb0b2;--paper:#fff0e2;--yellow:#ffbd73;--red:#ff6f70;--green:#b5e29d;--blue:#91dbe0;--purple:#d5a7e2;--pink:#ff9aaf}
+:root[data-theme="daylight"]{--ink:#f3f0e4;--panel:#fffdf5;--panel2:#e9e4d3;--line:#d1cbb9;--soft:#5c6258;--paper:#20271f;--yellow:#b27b00;--red:#b74836;--green:#347b48;--blue:#24708b;--purple:#73559b;--pink:#a34765}
+:root[data-theme="sunset"] body{background:radial-gradient(ellipse at 70% 8%,#49313c 0,transparent 42%),var(--ink)}
+:root[data-theme="sunset"] .game-detail{background:linear-gradient(120deg,#422d34,#2b2027 65%)}
+:root[data-theme="daylight"] body{background:var(--ink);color:var(--paper)}
+:root[data-theme="daylight"] .play-area.open{background:radial-gradient(ellipse at 50% -5%,#fff8df 0,transparent 45%),#f3f0e4}
+:root[data-theme="daylight"] .game-detail,:root[data-theme="daylight"] .game-card,:root[data-theme="daylight"] .player-chip,:root[data-theme="daylight"] .room-code,:root[data-theme="daylight"] .game-board,:root[data-theme="daylight"] .side-score,:root[data-theme="daylight"] .instructions-panel,:root[data-theme="daylight"] .result-panel,:root[data-theme="daylight"] .controller-prompt,:root[data-theme="daylight"] .controller-wait,:root[data-theme="daylight"] .result-card{background:#fffdf5;border-color:var(--line)}
+:root[data-theme="daylight"] .game-card.selected{background:#f7edc8;border-color:#c5a447}
+:root[data-theme="daylight"] .game-card small,:root[data-theme="daylight"] .detail-top p,:root[data-theme="daylight"] .game-rules,:root[data-theme="daylight"] .instructions-panel p,:root[data-theme="daylight"] .controller-message,:root[data-theme="daylight"] .player-greeting p,:root[data-theme="daylight"] .status-note{color:#555d52}
+:root[data-theme="daylight"] .join-strip{background:#fff8df;border-color:#d9c989}
+:root[data-theme="daylight"] .player-chip,:root[data-theme="daylight"] .score-row{background:#f1eee3}
+:root[data-theme="daylight"] .join-view input,:root[data-theme="daylight"] .guess-form input{background:#fffdf5;color:#20271f;border-color:#c9c4b4}
+:root[data-theme="daylight"] .controller{background:#f3f0e4}
+:root[data-theme="daylight"] .control-button,:root[data-theme="daylight"] .back-button,:root[data-theme="daylight"] .restart-button,:root[data-theme="daylight"] .secondary-button{background:#ebe7d8;color:#20271f;border-color:#c9c4b4}
+:root[data-theme="daylight"] .controller .ready-button,:root[data-theme="daylight"] .controller .primary-button{background:var(--yellow);color:#fff}
+:root[data-theme="daylight"] .rail{background:#e9e5d8}
+
+.theme-picker{display:flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);font:9px 'DM Mono',monospace;color:var(--soft);letter-spacing:.08em}
+.theme-picker select,.remote-theme select{font:11px system-ui,sans-serif;color:var(--paper);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+.remote-toggle{display:block;width:100%;margin-top:20px;text-align:left}
+.remote-toggle span{float:right;font-size:15px}
+.remote-panel{margin-top:12px;padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--panel);box-shadow:0 12px 30px #0002}
+.remote-panel>.eyebrow{margin-bottom:10px}
+.remote-games{display:flex;flex-wrap:wrap;gap:7px}
+.remote-game{padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--paper);font-size:12px}
+.remote-game.selected{border-color:var(--yellow);color:var(--yellow)}
+.remote-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.remote-actions button{flex:1 1 42%;min-height:40px}
+.remote-actions button:disabled{opacity:.4}
+.remote-theme{display:flex;align-items:center;justify-content:space-between;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);font:9px 'DM Mono',monospace;color:var(--soft);letter-spacing:.1em}
+.memory-pad .control-button{min-height:68px;font-size:25px}
+.answer-preview-item{display:flex;align-items:center;gap:9px;padding:12px;background:#23251f;border:1px solid #34372f;border-radius:10px;font-size:12px}
+.answer-preview-item strong{margin-left:auto;color:var(--yellow);font-size:11px}
+.controller .remote-panel{margin-bottom:22px}
+@media(max-width:960px){.game-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.top-tools{gap:7px}.theme-picker{gap:4px}.theme-picker select{max-width:100px}}
+@media(max-width:620px){.top-tools{gap:5px}.theme-picker{padding:4px}.theme-picker>span{display:none}.theme-picker select{max-width:84px;padding:6px 4px}.game-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.remote-panel{padding:13px}.remote-actions button{flex-basis:40%}.answer-preview-item{flex-wrap:wrap}.answer-preview-item strong{margin-left:0}}
+
+@media(max-width:960px){.game-card:nth-child(n+4){display:flex}}
+
+.result-reveal{max-width:600px;margin:16px auto}.result-summary{margin:18px 0 5px;color:var(--soft);font-size:13px}.result-summary strong{color:var(--yellow);font-size:22px}.icon-rps{color:var(--red)}.icon-closest{color:var(--blue)}.icon-hottake{color:var(--purple)}.icon-listblitz{color:var(--green)}.icon-memory{color:var(--pink)}
