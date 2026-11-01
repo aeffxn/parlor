@@ -97,8 +97,7 @@ class GameTests(unittest.TestCase):
         g.deadline=time.monotonic()-1;g.update({})
         self.assertEqual(g.phase,"results")
     def test_all_catalog_games_have_playable_rules(self):
-        self.assertEqual(set(GAMES),{"quickdraw","quiz","word","color","meteor"})
+        self.assertEqual(set(GAMES),{"quickdraw","quiz","word","color","meteor","rps","closest","hottake","listblitz","memory"})
         for key in GAMES:self.assertTrue(GAMES[key]["rules"])
 
 if __name__=="__main__": unittest.main(verbosity=2)
-
